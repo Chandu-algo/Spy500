@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Algorithm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="alerts"></div>
+    <h1>Trading Algorithm</h1>
+    <div>
+        <label for="alpha-api-key">Alpha Vantage API Key:</label>
+        <input type="text" id="alpha-api-key" placeholder="Enter Alpha Vantage API Key">
+        <label for="finnhub-api-key">Finnhub API Key:</label>
+        <input type="text" id="finnhub-api-key" placeholder="Enter Finnhub API Key">
+        <button onclick="submitApiKeys()">Submit</button>
+    </div>
+    <div id="output">
+        <h2>MAG 7 Stocks (S&P 500) - Default Data</h2>
+        <p><strong>Last fetched:</strong> <span id="last-fetched">Never</span></p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th colspan="2">Open Price</th>
+                    <th colspan="2">Previous Close</th>
+                    <th>Current Price</th>
+                    <th>SPY Weightage (%)</th>
+                    <th>RSI</th>
+                    <th>EMA 20</th>
+                    <th>EMA 50</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="stock-table-body">
+                <tr><td colspan="10">No data available. Please enter API keys to fetch data.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Views Counter -->
+    <div id="views-counter">
+        Views: <span id="view-count">0</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
